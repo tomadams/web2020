@@ -1,0 +1,35 @@
+<!-- Gray out buttons in jPLIST button-path-filter for paths which do not exist -->
+<!-- Code snipit. -->
+
+<script>
+const letterss = document.getElementById('main').getElementsByClassName('btn-index')
+for (let cell of letterss) {
+  var twochar = cell.getAttribute('data-path')
+  if (twochar.length == 2) {
+    var thechar = twochar.slice(1,2)
+    var lettercard = thechar + " card-title"
+    var letterexists = document.getElementById('main').getElementsByClassName(lettercard)
+    if (letterexists.length < 1) {
+      cell.className = "btn btn-index btn-index-dead"
+      }
+    }
+  }
+</script>
+
+<style>
+.btn.btn-index::after {
+    content: '\2022';
+    }
+button.btn.btn-index {
+    font-weight:800;
+    padding: 2px 4px;
+    font-family: Arial Black;
+    line-height: 36px;
+    font-size: 38px;
+    margin: 0px;
+    border: none;
+    }
+button.btn.btn-index.btn-index-dead { color: gray;}    
+.btn-group { width: 30% }
+</style>
+      
