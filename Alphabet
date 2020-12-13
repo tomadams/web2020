@@ -1,5 +1,11 @@
-<!-- Gray out buttons in jPLIST button-path-filter for paths which do not exist -->
-<!-- Code snipit. -->
+<!--
+Gray out buttons in jPList button-path-filter for paths which do not exist, by adding a "btn-index-dead" to the class of button tag.
+Structure of jPList is documented at: https://www.jplist.org/documentation/controls/buttons-path-filter
+Example html for button:
+<button type="button" class="btn btn-index" data-jplist-control="buttons-path-filter"
+     data-path=".A" data-group="group1" data-mode="radio" data-name="alphabet">A</button>
+Script should be placed after DOM load.
+-->
 
 <script>
 const letterss = document.getElementById('main').getElementsByClassName('btn-index')
